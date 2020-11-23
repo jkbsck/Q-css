@@ -1,0 +1,300 @@
+// ________________________
+// IMPORTS
+@import 'reset.scss';
+@import 'test.scss';
+// roboto google font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// ________________________
+// DEFAULTS
+html {
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  line-height: 1.5;
+  width: 100%;
+}
+a {
+  color: #1b68e4;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  border-top: solid 1px;
+  border-bottom: none;
+}
+
+// ________________________
+// ELEMENTS' CLASSES
+
+// headings
+.qh1, .qh2, .qh3, .qh4, .qh5, .qh6 {
+  padding: 0 1rem;
+}
+.qh1 {
+  font-size: 4rem;
+  font-weight: 700;
+  padding: 0 2rem;
+  color: #2176ff;
+}
+.qh2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #33a1fd;
+}
+.qh3 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  color: #f79824;
+}
+.qh4 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #ffc422; 
+}
+.qh5 {
+  font-size: 2rem;
+  padding: 0 .5rem;
+  color: #33a1fd;
+}
+.qh6 {
+  font-size: 1.6rem;
+  padding: 0 .5rem;
+  color: #ffc422;  
+}
+
+// button
+$btn-bg-color: #e4ecff;
+$btn-border-color: #a5b5d5;
+$btn-text-color: #1b68e4;
+
+button.qbtn, a.qbtn {
+  background-color: $btn-bg-color;
+  border: solid 1px $btn-border-color;
+  border-radius: 4px;
+  color: $btn-text-color;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin: .2rem;
+  padding: .2rem .6rem;
+  text-decoration: none;
+  &:hover {
+    background-color: darken($color: $btn-bg-color, $amount: 5%);
+    color: darken($color: $btn-text-color, $amount: 20%);
+    border: solid 1px lighten($color: $btn-border-color, $amount: 8%);
+  }
+}
+
+// ________________________
+// GRID CONTAINERS
+
+// sizes
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+// container
+.qcontainer,
+.qcontainer-fluid,
+.qcontainer-sm,
+.qcontainer-md,
+.qcontainer-lg,
+.qcontainer-xl {
+  // width: 100% causes overflow
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: #{$sm}) {
+  .qcontainer, .qcontainer-sm {
+    max-width: 540px;
+  }
+  // 12 column grid small
+  @for $i from 1 through 12 {
+    // 12 column grid
+    .qcol-sm-#{$i} {
+      -webkit-box-flex: 0 0 calc(100% / 12 * #{$i});
+              -ms-flex: 0 0 calc(100% / 12 * #{$i});
+                  flex: 0 0 calc(100% / 12 * #{$i});
+      max-width: calc(100% / 12 * #{$i});
+    }
+    .qcol-sm-auto {
+      -webkit-box-flex: 0 0 auto;
+              -ms-flex: 0 0 auto;
+                  flex: 0 0 auto;
+      width: auto;
+      max-width: 100%;
+    }
+  } 
+}
+
+@media (min-width: #{$md}) {
+  .qcontainer, .qcontainer-sm, .qcontainer-md {
+    max-width: 720px;
+  }
+  // 12 column grid medium
+  @for $i from 1 through 12 {
+    // 12 column grid
+    .qcol-md-#{$i} {
+      -webkit-box-flex: 0 0 calc(100% / 12 * #{$i});
+              -ms-flex: 0 0 calc(100% / 12 * #{$i});
+                  flex: 0 0 calc(100% / 12 * #{$i});
+      max-width: calc(100% / 12 * #{$i});
+    }
+    .qcol-md-auto {
+      -webkit-box-flex: 0 0 auto;
+              -ms-flex: 0 0 auto;
+                  flex: 0 0 auto;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+}
+
+@media (min-width: #{$lg}) {
+  .qcontainer, .qcontainer-sm, .qcontainer-md, .qcontainer-lg {
+    max-width: 960px;
+  }
+  // 12 column grid large
+  @for $i from 1 through 12 {
+    // 12 column grid
+    .qcol-lg-#{$i} {
+      -webkit-box-flex: 0 0 calc(100% / 12 * #{$i});
+              -ms-flex: 0 0 calc(100% / 12 * #{$i});
+                  flex: 0 0 calc(100% / 12 * #{$i});
+      max-width: calc(100% / 12 * #{$i});
+    }
+    .qcol-lg-auto {
+      -webkit-box-flex: 0 0 auto;
+              -ms-flex: 0 0 auto;
+                  flex: 0 0 auto;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+}
+
+@media (min-width: #{$xl}) {
+  .qcontainer, .qcontainer-sm, .qcontainer-md, .qcontainer-lg, .qcontainer-xl {
+    max-width: 1140px;
+  }
+  // 12 column grid xlarge
+  @for $i from 1 through 12 {
+    // 12 column grid
+    .qcol-xl-#{$i} {
+      -webkit-box-flex: 0 0 calc(100% / 12 * #{$i});
+              -ms-flex: 0 0 calc(100% / 12 * #{$i});
+                  flex: 0 0 calc(100% / 12 * #{$i});
+      max-width: calc(100% / 12 * #{$i});
+    }
+    .qcol-xl-auto {
+      -webkit-box-flex: 0 0 auto;
+              -ms-flex: 0 0 auto;
+                  flex: 0 0 auto;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+}
+
+// row
+.qrow {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+// columns
+@for $i from 1 through 12 {
+  // 12 column grid
+  .qcol-#{$i} {
+    -webkit-box-flex: 0 0 calc(100% / 12 * #{$i});
+            -ms-flex: 0 0 calc(100% / 12 * #{$i});
+                flex: 0 0 calc(100% / 12 * #{$i});
+    max-width: calc(100% / 12 * #{$i});
+  }
+  .qcol-auto {
+    -webkit-box-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+                flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+  // children's order
+  .qorder-#{$i} {
+    order: #{$i};
+  }
+  .qorder-first {
+    -ms-flex-order: -1;
+    order: -1;
+  }
+  .qorder-last {
+    -ms-flex-order: 13;
+    order: 13;
+  }
+  // children's offset
+  .qoffset-#{$i} {
+    margin-left: calc(100% / 12 * #{$i});
+  }
+}
+
+// ________________________
+// HEADER
+@for $i from 1 through 10 {
+  // absolute
+  .qheader-#{$i} {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: calc(10px * #{$i});
+    background-color: #bbb;
+  }
+  // fixed
+  .qheader-fixed-#{$i} {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: calc(10px * #{$i});
+    background-color: #bbb;
+  }
+}
+
+// ________________________
+// FOOTER
+@for $i from 1 through 10 {
+  // absolute
+  .qfooter-#{$i} {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: calc(10px * #{$i});
+    background-color: #bbb;
+  }
+  // fixed
+  .qfooter-fixed-#{$i} {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: calc(10px * #{$i});
+    background-color: #bbb;
+  }
+}
+
+// ________________________
+// GAP
+@for $i from 1 through 10 {
+  .qgap-#{$i} {
+    width: 100%;
+    height: calc(10px * #{$i});
+    background-color: whitesmoke;
+  }
+}

@@ -1,0 +1,115 @@
+// ________________________
+// MARGINS PADDINGS BORDERS
+
+// margins / paddings
+@for $i from 1 through 10 {
+  // MARGIN WITH PIXELS
+  // margin on every side
+  .qm-#{$i * 5} {
+    margin: #{$i * 5}px;
+  }
+  .qm-auto {
+    margin: auto;
+  }
+  // margin on x axis
+  .qmx-#{$i * 5} {
+    margin-left: #{$i * 5}px;
+    margin-right: #{$i * 5}px;
+  }
+  .qmx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  // margin on y axis
+  .qmy-#{$i * 5} {
+    margin-top: #{$i * 5}px;
+    margin-bottom: #{$i * 5}px;
+  }
+  .qmy-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  // margin left
+  .qml-#{$i * 5} {
+    margin-left: #{$i * 5}px;
+  }
+  .qml-auto {
+    margin-left: auto;
+  }
+  // margin right
+  .qmr-#{$i * 5} {
+    margin-right: #{$i * 5}px;
+  }
+  .qmr-auto {
+    margin-right: auto;
+  }
+  // margin top
+  .qmt-#{$i * 5} {
+    margin-top: #{$i * 5}px;
+  }
+  .qmt-auto {
+    margin-top: auto;
+  }
+  // margin bottom
+  .qmb-#{$i * 5} {
+    margin-bottom: #{$i * 5}px;
+  }
+  .qmb-auto {
+    margin-bottom: auto;
+  }
+
+  // PADDING WITH PIXELS
+  // padding on every side
+  .qp-#{$i * 5} {
+    padding: #{$i * 5}px;
+  }
+  .qp-auto {
+    padding: auto;
+  }
+  // padding on x axis
+  .qpx-#{$i * 5} {
+    padding-left: #{$i * 5}px;
+    padding-right: #{$i * 5}px;
+  }
+  .qpx-auto {
+    padding-left: auto;
+    padding-right: auto;
+  }
+  // padding on y axis
+  .qpy-#{$i * 5} {
+    padding-top: #{$i * 5}px;
+    padding-bottom: #{$i * 5}px;
+  }
+  .qpy-auto {
+    padding-top: auto;
+    padding-bottom: auto;
+  }
+  // padding left
+  .qpl-#{$i * 5} {
+    padding-left: #{$i * 5}px;
+  }
+  .qpl-auto {
+    padding-left: auto;
+  }
+  // padding right
+  .qpr-#{$i * 5} {
+    padding-right: #{$i * 5}px;
+  }
+  .qpr-auto {
+    padding-right: auto;
+  }
+  // padding top
+  .qpt-#{$i * 5} {
+    padding-top: #{$i * 5}px;
+  }
+  .qpt-auto {
+    padding-top: auto;
+  }
+  // padding bottom
+  .qpb-#{$i * 5} {
+    padding-bottom: #{$i * 5}px;
+  }
+  .qpb-auto {
+    padding-bottom: auto;
+  }
+}
